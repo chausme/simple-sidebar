@@ -5,18 +5,76 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Simple Sidebar</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
         <link rel="stylesheet" href="./styles.scss" />
     </head>
     <body>
-        <main class="mb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h1>Simple Sidebar</h1>
-                    </div>
-                </div>
+        <header class="d-flex justify-content-end p-3 position-absolute w-100">
+            <button class="sidebar-toggle btn btn-dark">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="./images/logo.svg" class="logo" alt="" />
+                <button class="close-btn btn btn-dark">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-        </main>
+            <div class="sidebar-links">
+                <ul class="links">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.facebook.com">
+                            <i class="fab fa-facebook">
+                                <span class="visually-hidden">Facebook</span>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com">
+                            <i class="fab fa-twitter">
+                                <span class="visually-hidden">Twitter</span>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.behance.net">
+                            <i class="fab fa-behance">
+                                <span class="visually-hidden">Behance</span>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com">
+                            <i class="fab fa-linkedin">
+                                <span class="visually-hidden">LinkedIn</span>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.sketch.com">
+                            <i class="fab fa-sketch">
+                                <span class="visually-hidden">Sketch</span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
         <script src="./app.js"></script>
     </body>
 </html>
