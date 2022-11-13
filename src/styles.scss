@@ -40,6 +40,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+    margin-top: 20px;
 }
 
 ul {
@@ -55,13 +57,26 @@ ul {
         }
     }
 
+    &.links {
+        li {
+            @media (min-width: map-get($grid-breakpoints, 'md')) {
+                font-size: 1rem;
+            }
+        }
+    }
+
     li {
         list-style-type: none;
+        font-size: 1.2rem;
 
         a {
             color: var(--bs-teal);
             text-decoration: none;
-            font-size: 1.2rem;
+
+
+            &:hover {
+                color: var(--bs-gray-900);
+            }
         }
     }
 }
