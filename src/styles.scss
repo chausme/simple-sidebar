@@ -7,8 +7,24 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
+:root {
+    --transition: all 0.3s linear;
+}
+
 body {
     background-color: var(--bs-gray-200);
+}
+
+.sidebar-toggle {
+    i {
+        transition: var(--transition);
+    }
+
+    &.collapsed {
+        i {
+            transform: rotate3d(2, 2, 4, 360deg);
+        }
+    }
 }
 
 .sidebar {
@@ -18,11 +34,18 @@ body {
     padding: 10px 15px;
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    transition: var(--transition);
+    transform: translate(-100%);
 
     @media (min-width: map-get($grid-breakpoints, 'sm')) {
         max-width: 500px;
+    }
+
+    &.collapsed {
+        transform: translate(0);
     }
 }
 
@@ -34,14 +57,6 @@ body {
     .logo {
         max-width: 75px;
     }
-}
-
-.sidebar-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    margin-top: 20px;
 }
 
 ul {
@@ -72,7 +87,7 @@ ul {
         a {
             color: var(--bs-teal);
             text-decoration: none;
-
+            transition: var(--transition);
 
             &:hover {
                 color: var(--bs-gray-900);
